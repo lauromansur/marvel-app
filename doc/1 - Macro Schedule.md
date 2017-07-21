@@ -1,5 +1,4 @@
-Schedule
-==================
+# Macro Schedule #
 
 ## 20/07 ##
 * Planning and benchmark
