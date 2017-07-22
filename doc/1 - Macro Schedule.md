@@ -5,10 +5,11 @@
 * Define technologies to be used
 
 ## 21/07 ##
+* Inspiration hour
 * Learn about Marvel API and generate key
-* Structure Git repository
-* Define presentation layer architecture, layout and guidelines
 
-## 22 and 23/07 ##
+## 22/07 ##
+* Define presentation layer architecture, layout and guidelines
+* Structure Git repository
 * Structure Npm, Sass, Grunt
 * Implement presentation layer with AngularJS and Angular Material
