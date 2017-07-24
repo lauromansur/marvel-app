@@ -1,6 +1,12 @@
 # Project specific #
 ###################
-doc/private/*
+dist/*
+doc/*
+nbproject/*
+node_modules/*
+app/bower_components/*
+!.gitkeep
+.idea
 
 # Compiled source #
 ###################
@@ -26,6 +32,7 @@ doc/private/*
 
 # Logs and databases #
 ######################
+logs/*
 *.log
 *.sql
 *.sqlite
@@ -39,3 +46,4 @@ doc/private/*
 .Trashes
 ehthumbs.db
 Thumbs.db
+tmp

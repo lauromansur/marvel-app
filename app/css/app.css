@@ -1,0 +1,92 @@
+a {
+  color: #fff; }
+
+/* Size ----------------------------------------------------------------------*/
+.s24 {
+  height: 24px;
+  width: 24px; }
+
+.s36 {
+  height: 36px;
+  width: 36px; }
+
+.s48 {
+  height: 48px;
+  width: 48px; }
+
+.s64 {
+  height: 64px;
+  width: 64px; }
+
+/* Typography ----------------------------------------------------------------*/
+.text-center {
+  text-align: center; }
+
+.text-small {
+  font-size: 0.8rem; }
+
+.text-decoration-none {
+  text-decoration: none; }
+
+.text-white {
+  color: #fff; }
+
+.btn-marvel {
+  background: transparent !important;
+  border: 0;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 47px;
+  min-width: 250px;
+  padding: 0 7px;
+  position: relative;
+  outline: 0;
+  overflow: visible;
+  vertical-align: middle;
+  transition: width 1s; }
+  .btn-marvel span {
+    box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+    display: block;
+    padding: 0 10px; }
+  .btn-marvel.md-hue-2 span {
+    background-color: #c62828; }
+  .btn-marvel.md-hue-2:before {
+    background-color: #c62828; }
+  .btn-marvel.md-hue-2:after {
+    background-color: #c62828; }
+  .btn-marvel:before {
+    box-shadow: -2px 0px 2px 0 rgba(0, 0, 0, 0.26);
+    content: "";
+    height: 47px;
+    left: 3px;
+    position: absolute;
+    top: 0;
+    transform: skew(-11deg, 0);
+    -webkit-transform: skew(-11deg, 0);
+    -ms-transform: skew(-11deg, 0);
+    width: 11px; }
+  .btn-marvel:after {
+    box-shadow: 4px 2px 5px 0 rgba(0, 0, 0, 0.26);
+    content: "";
+    height: 47px;
+    position: absolute;
+    right: 3px;
+    top: 0;
+    transform: skew(-11deg, 0);
+    -webkit-transform: skew(-11deg, 0);
+    -ms-transform: skew(-11deg, 0);
+    width: 11px; }
+  .btn-marvel:not([disabled]) {
+    box-shadow: none !important; }
+  .btn-marvel:hover span, .btn-marvel:focus span {
+    background-color: #e53935; }
+  .btn-marvel:hover:before, .btn-marvel:focus:before {
+    background-color: #e53935; }
+  .btn-marvel:hover:after, .btn-marvel:focus:after {
+    background-color: #e53935; }
+
+.logo {
+  width: 96px; }
+
+.footer {
+  background-color: #424242; }

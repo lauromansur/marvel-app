@@ -1,0 +1,66 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button.
+// -----------------------------------------------------------------------------
+
+.btn-marvel {
+    background: transparent !important;
+    border: 0;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 47px;
+    min-width: 250px;
+    padding: 0 7px;
+    position: relative;
+    outline: 0;
+    overflow: visible;
+    vertical-align: middle;
+    transition: width 1s;
+    
+    span {
+        box-shadow: 0px 2px 5px 0 rgba(0,0,0,.26);
+        display: block;
+        padding: 0 10px;
+    }
+    
+    &.md-hue-2 {
+        span { background-color: #c62828; }
+        &:before { background-color: #c62828; }
+        &:after { background-color: #c62828; }
+    }
+    
+    &:before {
+        box-shadow: -2px 0px 2px 0 rgba(0,0,0,.26);
+        content: "";
+        height: 47px;
+        left: 3px;
+        position: absolute;
+        top: 0;
+        transform: skew(-11deg,0);
+        -webkit-transform: skew(-11deg,0);
+        -ms-transform: skew(-11deg,0);
+        width: 11px;
+    }
+    
+    &:after {
+        box-shadow: 4px 2px 5px 0 rgba(0,0,0,.26);
+        content: "";
+        height: 47px;
+        position: absolute;
+        right: 3px;
+        top: 0;
+        transform: skew(-11deg,0);
+        -webkit-transform: skew(-11deg,0);
+        -ms-transform: skew(-11deg,0);
+        width: 11px;
+    }
+    
+    &:not([disabled]){
+        box-shadow: none !important;
+    }
+    
+    &:hover, &:focus {
+        span { background-color: #e53935; }
+        &:before { background-color: #e53935; }
+        &:after { background-color: #e53935; }
+    }
+}

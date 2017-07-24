@@ -1,5 +1,7 @@
-# My Developer Account #
+# Front-end Guidelines #
 
-* __Username__: lauromansur
-* __Your public key__: 9a35ae944d0e70c1caeacec80a9319c6
-* __Your private key__: 3c00202078833de0165dbd7bbd4aa112afe40462
+* Colors:
+> * Red Marvel: #f0141e
+> * Body Bg: #222
+> * Light gray: #b5b5b5
+> * Dark gray: #5c5c5c
