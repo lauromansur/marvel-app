@@ -1,1 +1,47 @@
-<p>This is the partial for discover.</p>
+<md-card class="animated fadeIn" ng-hide="ctrl.flags.showComics">
+    <md-card-actions layout="row" layout-align="start center">
+        <md-button md-no-ink ui-sref="home">
+            <md-icon ng-bind="'arrow_back'"></md-icon>&nbsp;Back
+        </md-button>
+    </md-card-actions>
+    <md-card-header md-colors="{background: 'grey-700'}">
+        <md-card-header-text layout="column" layout-align="center center">
+            <span class="md-title">Discover...</span>
+            <span class="md-subhead">which comics were launched at the year of your birth!</span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-card-content class="text-center">
+        <form name="frm" novalidate ng-submit="ctrl.submit()">
+            <div flex layout="row" layout-align="center" class="mt-4">
+                <md-input-container md-no-float class="md-block" ng-class="{'md-input-normal': !frm.$submitted}">
+                    <label>Enter year of birth</label>
+                    <md-icon ng-bind="'today'"></md-icon>
+                    <input name="birthYear" type="text" md-placeholder="yyyy" ng-model="ctrl.birthYear"
+                        ng-pattern="/^[1-9]{4}$/" maxlength="4" required>
+                    <div ng-messages="frm.birthYear.$error" role="alert" ng-show="frm.birthYear.$invalid && frm.$submitted">
+                        <div ng-message="valid">Invalid date!</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div flex layout="row" layout-align="center" class="md-margin">
+                <md-button type="submit" class="md-raised">Submit</md-button>
+            </div>
+        </form>
+    </md-card-content>
+</md-card>
+
+<md-grid-list class="animated fadeIn" ng-show="ctrl.flags.showComics"
+    md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
+    md-row-height-gt-md="1:1" md-row-height="4:3"
+    md-gutter="8px" md-gutter-gt-sm="4px" >
+
+    <md-grid-tile ng-repeat="comic in vm.comics.data.results"
+        md-rowspan="{{comic.span.row || 1}}"
+        md-colspan="{{comic.span.col || 1}}"
+        md-colspan-sm="1"
+        md-colspan-xs="1"
+        ng-class="comic.background">
+        <!--<md-icon md-svg-icon="{{tile.icon}}"></md-icon>-->
+        <md-grid-tile-footer><h3>{{comic.title}}</h3></md-grid-tile-footer>
+    </md-grid-tile>
+</md-grid-list>

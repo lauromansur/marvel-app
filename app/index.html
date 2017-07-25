@@ -19,6 +19,9 @@
         <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body layout="column" layout-fill>
+        <!--Background-->
+        <div class="bg-cover-marvel"></div>
+        
         <!--Header-->
         <md-toolbar class="md-whiteframe-4dp">
             <div class="md-toolbar-tools" layout="row" layout-align="center center">
@@ -29,8 +32,8 @@
         </md-toolbar>
     
         <!--Content-->
-        <md-content flex layout="row">
-            <md-content flex layout="column" layout-align="center center">
+        <md-content flex layout="row" class="main-content">
+            <md-content flex layout="column" layout-align="center center" class="main-content">
                 <ui-view></ui-view>
             </md-content>
         </md-content>
@@ -39,6 +42,12 @@
         <div class="footer container md-whiteframe-4dp" layout="row" layout-align="center center" flex="5">
             <span class="text-small">&copy; 2017 Marvel App | powered by <a href="https://www.linkedin.com/in/lauromansur/" target="_blank" class="text-decoration-none"><em>Lauro Mansur</em></a></span>
         </div>
+        
+        <!--Back to Top
+        <button class="md-fab md-fab-bottom-right docs-scroll-fab md-button md-ink-ripple scrolling" type="button" docs-scroll-class="scrolling" ng-click="scrollTop()" aria-label="Back to Top">
+            <md-icon ng-bind="'keyboard_arrow_up'" role="img" aria-hidden="true"></md-icon>
+            <div class="md-ripple-container"></div>
+        </button>-->
     
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -48,6 +57,7 @@
         <script src="bower_components/angular-animate/angular-animate.min.js" type="text/javascript"></script>
         <script src="bower_components/angular-aria/angular-aria.min.js" type="text/javascript"></script>
         <script src="bower_components/angular-messages/angular-messages.min.js" type="text/javascript"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js" type="text/javascript"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js" type="text/javascript"></script>
         <script src="bower_components/angular-material/angular-material.min.js" type="text/javascript"></script>
         <script src="bower_components/oclazyload/dist/ocLazyLoad.min.js" type="text/javascript"></script>

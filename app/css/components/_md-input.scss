@@ -1,0 +1,11 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button.
+// -----------------------------------------------------------------------------
+
+md-input-container {
+    &.md-input-normal {
+        md-icon { color: rgba(255,255,255,1.0) !important; }
+        label, label:after { color: rgba(255,255,255,0.5) !important; }
+        .md-input { border-color: rgba(255,255,255,0.12) !important; }
+    }
+}

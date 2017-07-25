@@ -56,11 +56,11 @@
     
     &:not([disabled]){
         box-shadow: none !important;
-    }
-    
-    &:hover, &:focus {
-        span { background-color: #e53935; }
-        &:before { background-color: #e53935; }
-        &:after { background-color: #e53935; }
+        
+        &:hover, &:focus {
+            span { background-color: #e53935; }
+            &:before { background-color: #e53935; }
+            &:after { background-color: #e53935; }
+        }
     }
 }

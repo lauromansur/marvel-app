@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('marvelApp.home', [])
+angular.module('marvelApp.homez', [])
 
 .controller('HomeCtrl', [function() {
     var vm = this;

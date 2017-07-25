@@ -2,10 +2,30 @@
 // This file contains styles that are specific to the page.
 // -----------------------------------------------------------------------------
 
-.logo {
-    width: 96px;
+.bg-cover-marvel {
+    background-attachment: fixed;
+    background-color: $gray-dark;
+    background-image: url(../img/bg/bg_marvel_optimized.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    opacity: .4;
+    position: fixed;
+    width: 100%;
+    z-index: 0;
 }
 
 .footer {
     background-color: $gray-dark;
+    opacity: .8;
+    z-index: 1
+}
+
+.logo {
+    width: 96px;
+}
+
+.main-content {
+    background-color: transparent !important;
 }

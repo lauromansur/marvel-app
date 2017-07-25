@@ -4,51 +4,19 @@
 angular.module('marvelApp', [
     'ui.router',
     'ngAnimate',
+    'ngResource',
     'ngMaterial',
     'oc.lazyLoad'
 ])
+.value('api', { key: '9a35ae944d0e70c1caeacec80a9319c6', path: 'https://gateway.marvel.com:443/v1/public' })
 .value('version', '0.0.1')
-.config(['$locationProvider', '$mdThemingProvider', '$stateProvider', '$urlRouterProvider',
-    function($locationProvider, $mdThemingProvider, $stateProvider, $urlRouterProvider) {
+.config(['$mdThemingProvider', '$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
+    function($mdThemingProvider, $stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         
         var init = function(){
-            configLocation();
-            configStates();
             configTheme();
-        };
-        
-        var configLocation = function(){
-            $locationProvider.hashPrefix('!');
-        };
-        
-        var configStates = function(){
-            $urlRouterProvider.otherwise("/home");
-            
-            $stateProvider
-                .state("home", {
-                    url: '/home',
-                    controller: 'HomeCtrl as ctrl',
-                    templateUrl: "js/home/home.html",
-                    resolve: { lazy: ['$ocLazyLoad', function($ocLazyLoad) { return $ocLazyLoad.load(['js/home/home.js']); }] }
-                })
-                .state("discover", {
-                    url: '/discover',
-                    templateUrl: 'js/discover/discover.html',
-                    controller: 'DiscoverCtrl as ctrl',
-                    resolve: { lazy: ['$ocLazyLoad', function($ocLazyLoad) { return $ocLazyLoad.load(['js/discover/discover.js']); }] }
-                })
-                .state("browse", {
-                    url: '/browse',
-                    controller: 'BrowseCtrl as ctrl',
-                    templateUrl: 'js/browse/browse.html',
-                    resolve: { lazy: ['$ocLazyLoad', function($ocLazyLoad) { return $ocLazyLoad.load(['js/browse/browse.js']); }] }
-                })
-                .state("about", {
-                    url: '/about',
-                    controller: 'AboutCtrl as ctrl',
-                    templateUrl: 'js/about/about.html',
-                    resolve: { lazy: ['$ocLazyLoad', function($ocLazyLoad) { return $ocLazyLoad.load(['js/about/about.js']); }] }
-                });
+            configLazyLoad();
+            configStates();
         };
         
         var configTheme = function(){
@@ -60,6 +28,48 @@ angular.module('marvelApp', [
                 .primaryPalette('redMarvel')
                 .accentPalette('grey')
                 .dark();
+        };
+        
+        var configLazyLoad = function(){
+            $ocLazyLoadProvider.config({
+                debug: false,
+                modules: [
+                    {name: 'home', files: ['js/home/home.js']},
+                    {name: 'discover', files: ['js/discover/discover.js', 'js/resources/comics.js']},
+                    {name: 'browse', files: ['js/browse/browse.js']},
+                    {name: 'about', files: ['js/about/about.js']}
+                ]
+            });
+        };
+        
+        var configStates = function(){
+            $urlRouterProvider.otherwise("/home");
+            
+            $stateProvider
+                .state("home", {
+                    url: '/home',
+                    controller: 'HomeCtrl as ctrl',
+                    templateUrl: "js/home/home.html",
+                    resolve: { lazy: ['$ocLazyLoad', function($ocLazyLoad) { return $ocLazyLoad.load(['home']); }] }
+                })
+                .state("discover", {
+                    url: '/discover',
+                    templateUrl: 'js/discover/discover.html',
+                    controller: 'DiscoverCtrl as ctrl',
+                    resolve: { lazy: ['$ocLazyLoad', function($ocLazyLoad) { return $ocLazyLoad.load(['discover']); }] }
+                })
+                .state("browse", {
+                    url: '/browse',
+                    controller: 'BrowseCtrl as ctrl',
+                    templateUrl: 'js/browse/browse.html',
+                    resolve: { lazy: ['$ocLazyLoad', function($ocLazyLoad) { return $ocLazyLoad.load(['browse']); }] }
+                })
+                .state("about", {
+                    url: '/about',
+                    controller: 'AboutCtrl as ctrl',
+                    templateUrl: 'js/about/about.html',
+                    resolve: { lazy: ['$ocLazyLoad', function($ocLazyLoad) { return $ocLazyLoad.load(['about']); }] }
+                });
         };
         
         init();

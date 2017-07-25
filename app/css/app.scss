@@ -9,16 +9,19 @@
 // 3. Base stuff
 @import
   'base/base',
-  'base/helpers';
+  'base/helpers',
+  'base/animations';
 
 // 4. Layout-related sections
   
 // 5. Components
 @import
-  'components/md-button';
+  'components/md-button',
+  'components/md-input';
 
 // 6. Page-specific styles
 @import
-  'pages/home';
+  'pages/home',
+  'pages/discover';
   
 // 7. Themes
