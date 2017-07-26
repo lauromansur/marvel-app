@@ -1,4 +1,6 @@
-<md-card class="animated fadeIn" ng-hide="ctrl.flags.showComics">
+<!--Form-->
+<md-card class="animated" ng-show="!ctrl.comics && !ctrl.comic"
+    ng-class="{'fadeInUp': !ctrl.comics, 'fadeOutUp': ctrl.comics}">
     <md-card-actions layout="row" layout-align="start center">
         <md-button md-no-ink ui-sref="home">
             <md-icon ng-bind="'arrow_back'"></md-icon>&nbsp;Back
@@ -17,7 +19,7 @@
                     <label>Enter year of birth</label>
                     <md-icon ng-bind="'today'"></md-icon>
                     <input name="birthYear" type="text" md-placeholder="yyyy" ng-model="ctrl.birthYear"
-                        ng-pattern="/^[1-9]{4}$/" maxlength="4" required>
+                        ng-pattern="/^[1-9]{4}$/" maxlength="4" required ng-disabled="ctrl.flags.loading">
                     <div ng-messages="frm.birthYear.$error" role="alert" ng-show="frm.birthYear.$invalid && frm.$submitted">
                         <div ng-message="valid">Invalid date!</div>
                     </div>
@@ -30,18 +32,39 @@
     </md-card-content>
 </md-card>
 
-<md-grid-list class="animated fadeIn" ng-show="ctrl.flags.showComics"
+<!--Comics-->
+<md-content layout-xs="column" layout="row">
+    <div class="animated" ng-class="{'fadeInUp': ctrl.comics, 'fadeOutDown': !ctrl.comics}"
+        layout="row" layout-wrap flex layout-align="center top">
+        <md-card class="comic" ng-show="!!ctrl.comics" ng-repeat="comic in ctrl.comics.data.results">
+            <img ng-src="{{comic.bgImage}}" class="md-card-image" alt="{{comic.title}}">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline" ng-bind="comic.title"></span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p><strong>On Sale Date: <span ng-bind="comic.onSaleDate"></span></strong></p>
+                <p ng-bind="comic.description"></p>
+            </md-card-content>
+        </md-card>
+        
+    </div>
+</md-content>
+    
+<!-- TODO: Implement Grid List
+<md-grid-list class="animated" ng-show="ctrl.comics"
     md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
-    md-row-height-gt-md="1:1" md-row-height="4:3"
-    md-gutter="8px" md-gutter-gt-sm="4px" >
-
-    <md-grid-tile ng-repeat="comic in vm.comics.data.results"
-        md-rowspan="{{comic.span.row || 1}}"
-        md-colspan="{{comic.span.col || 1}}"
-        md-colspan-sm="1"
-        md-colspan-xs="1"
-        ng-class="comic.background">
-        <!--<md-icon md-svg-icon="{{tile.icon}}"></md-icon>-->
-        <md-grid-tile-footer><h3>{{comic.title}}</h3></md-grid-tile-footer>
+    md-gutter="12px" md-gutter-gt-sm="8px"
+    md-row-height="1:2" md-row-height-gt-md="1:1">
+    <md-grid-tile class="comicTile" ng-repeat="tile in ctrl.comics.data.results"
+        md-colspan-gt-sm="{{tile.colspan}}" md-rowspan-gt-sm="{{tile.rowspan}}"
+        ng-style="{'background-color': tile.bgColor, 'background-image': tile.bgImage }">
+        <md-grid-tile-footer>
+            <h3>
+                <b>Title: <span ng-bind="tile.title"></span></b><br />
+                <b>Date: <span ng-bind="tile.onSaleDate"></span></b>
+            </h3>
+        </md-grid-tile-footer>
     </md-grid-tile>
-</md-grid-list>
+</md-grid-list>-->

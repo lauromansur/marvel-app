@@ -1,6 +1,20 @@
 a {
   color: #fff; }
 
+md-content {
+  background-color: transparent !important; }
+
+::-webkit-scrollbar {
+  height: .5rem;
+  width: .5rem; }
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+
+::-webkit-scrollbar-thumb {
+  background: #666666; }
+
 /* Sizing --------------------------------------------------------------------*/
 .s24 {
   height: 24px;
@@ -157,6 +171,52 @@ a {
   margin-top: 3rem !important;
   margin-bottom: 3rem !important; }
 
+.m-6 {
+  margin: 4.5rem !important; }
+
+.mt-6 {
+  margin-top: 4.5rem !important; }
+
+.mr-6 {
+  margin-right: 4.5rem !important; }
+
+.mb-6 {
+  margin-bottom: 4.5rem !important; }
+
+.ml-6 {
+  margin-left: 4.5rem !important; }
+
+.mx-6 {
+  margin-right: 4.5rem !important;
+  margin-left: 4.5rem !important; }
+
+.my-6 {
+  margin-top: 4.5rem !important;
+  margin-bottom: 4.5rem !important; }
+
+.m-7 {
+  margin: 6rem !important; }
+
+.mt-7 {
+  margin-top: 6rem !important; }
+
+.mr-7 {
+  margin-right: 6rem !important; }
+
+.mb-7 {
+  margin-bottom: 6rem !important; }
+
+.ml-7 {
+  margin-left: 6rem !important; }
+
+.mx-7 {
+  margin-right: 6rem !important;
+  margin-left: 6rem !important; }
+
+.my-7 {
+  margin-top: 6rem !important;
+  margin-bottom: 6rem !important; }
+
 .p-0 {
   padding: 0 !important; }
 
@@ -295,11 +355,57 @@ a {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important; }
 
+.p-6 {
+  padding: 4.5rem !important; }
+
+.pt-6 {
+  padding-top: 4.5rem !important; }
+
+.pr-6 {
+  padding-right: 4.5rem !important; }
+
+.pb-6 {
+  padding-bottom: 4.5rem !important; }
+
+.pl-6 {
+  padding-left: 4.5rem !important; }
+
+.px-6 {
+  padding-right: 4.5rem !important;
+  padding-left: 4.5rem !important; }
+
+.py-6 {
+  padding-top: 4.5rem !important;
+  padding-bottom: 4.5rem !important; }
+
+.p-7 {
+  padding: 6rem !important; }
+
+.pt-7 {
+  padding-top: 6rem !important; }
+
+.pr-7 {
+  padding-right: 6rem !important; }
+
+.pb-7 {
+  padding-bottom: 6rem !important; }
+
+.pl-7 {
+  padding-left: 6rem !important; }
+
+.px-7 {
+  padding-right: 6rem !important;
+  padding-left: 6rem !important; }
+
+.py-7 {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important; }
+
 /* Typography ----------------------------------------------------------------*/
 .text-center {
   text-align: center; }
 
-.text-small {
+.text-small, .footer {
   font-size: 0.8rem; }
 
 .text-decoration-none {
@@ -314,12 +420,6 @@ a {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
 
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-
 @keyframes fadeIn {
   from {
     opacity: 0; }
@@ -327,8 +427,184 @@ a {
     opacity: 1; } }
 
 .fadeIn {
-  -webkit-animation-name: fadeIn;
   animation-name: fadeIn; }
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -15%, 0); }
+  to {
+    opacity: 1;
+    transform: none; } }
+
+.fadeInDown {
+  animation-name: fadeInDown; }
+
+@keyframes fadeInDownBig {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -2000px, 0); }
+  to {
+    opacity: 1;
+    transform: none; } }
+
+.fadeInDownBig {
+  animation-name: fadeInDownBig; }
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-15%, 0, 0); }
+  to {
+    opacity: 1;
+    transform: none; } }
+
+.fadeInLeft {
+  animation-name: fadeInLeft; }
+
+@keyframes fadeInLeftBig {
+  from {
+    opacity: 0;
+    transform: translate3d(-2000px, 0, 0); }
+  to {
+    opacity: 1;
+    transform: none; } }
+
+.fadeInLeftBig {
+  animation-name: fadeInLeftBig; }
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(15%, 0, 0); }
+  to {
+    opacity: 1;
+    transform: none; } }
+
+.fadeInRight {
+  animation-name: fadeInRight; }
+
+@keyframes fadeInRightBig {
+  from {
+    opacity: 0;
+    transform: translate3d(2000px, 0, 0); }
+  to {
+    opacity: 1;
+    transform: none; } }
+
+.fadeInRightBig {
+  animation-name: fadeInRightBig; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 15%, 0); }
+  to {
+    opacity: 1;
+    transform: none; } }
+
+.fadeInUp {
+  animation-name: fadeInUp; }
+
+@keyframes fadeInUpBig {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2000px, 0); }
+  to {
+    opacity: 1;
+    transform: none; } }
+
+.fadeInUpBig {
+  animation-name: fadeInUpBig; }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+.fadeOut {
+  animation-name: fadeOut; }
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 15%, 0); } }
+
+.fadeOutDown {
+  animation-name: fadeOutDown; }
+
+@keyframes fadeOutDownBig {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 2000px, 0); } }
+
+.fadeOutDownBig {
+  animation-name: fadeOutDownBig; }
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    transform: translate3d(-15%, 0, 0); } }
+
+.fadeOutLeft {
+  animation-name: fadeOutLeft; }
+
+@keyframes fadeOutLeftBig {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    transform: translate3d(-2000px, 0, 0); } }
+
+.fadeOutLeftBig {
+  animation-name: fadeOutLeftBig; }
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    transform: translate3d(15%, 0, 0); } }
+
+.fadeOutRight {
+  animation-name: fadeOutRight; }
+
+@keyframes fadeOutRightBig {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    transform: translate3d(2000px, 0, 0); } }
+
+.fadeOutRightBig {
+  animation-name: fadeOutRightBig; }
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -15%, 0); } }
+
+.fadeOutUp {
+  animation-name: fadeOutUp; }
+
+@keyframes fadeOutUpBig {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -2000px, 0); } }
+
+.fadeOutUpBig {
+  animation-name: fadeOutUpBig; }
 
 .btn-marvel {
   background: transparent !important;
@@ -396,23 +672,24 @@ md-input-container.md-input-normal .md-input {
 .bg-cover-marvel {
   background-attachment: fixed;
   background-color: #424242;
-  background-image: url(../img/bg/bg_marvel_optimized.jpg);
-  background-position: top center;
+  background-image: url(../img/bg/bg_marvel.gif);
+  background-position: top right;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  opacity: .4;
+  opacity: .6;
   position: fixed;
   width: 100%;
   z-index: 0; }
 
 .footer {
   background-color: #424242;
-  opacity: .8;
+  max-height: 50px !important;
+  opacity: .6;
   z-index: 1; }
 
 .logo {
   width: 96px; }
 
-.main-content {
-  background-color: transparent !important; }
+.comic {
+  max-width: 250px; }

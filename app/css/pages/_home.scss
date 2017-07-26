@@ -5,12 +5,12 @@
 .bg-cover-marvel {
     background-attachment: fixed;
     background-color: $gray-dark;
-    background-image: url(../img/bg/bg_marvel_optimized.jpg);
-    background-position: top center;
+    background-image: url(../img/bg/bg_marvel.gif);
+    background-position: top right;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-    opacity: .4;
+    opacity: .6;
     position: fixed;
     width: 100%;
     z-index: 0;
@@ -18,14 +18,12 @@
 
 .footer {
     background-color: $gray-dark;
-    opacity: .8;
-    z-index: 1
+    max-height: 50px !important;
+    opacity: .6;
+    z-index: 1;
+    @extend .text-small;
 }
 
 .logo {
     width: 96px;
-}
-
-.main-content {
-    background-color: transparent !important;
 }
