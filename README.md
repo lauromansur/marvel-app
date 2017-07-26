@@ -19,7 +19,8 @@ npm start
 
 
 ## TODO ##
-- Improve discover screen with material components like grid list and virtual repeater
+- Fix md-content inside discover screen
+- Improve discover screen with material components like grid list, virtual repeater and progress linear
 - Expand the forms of filtering of existing entities (comics)
 - Allow the search for new entities like characters, creators, events, series and stories
 - Implement test automation with Jasmine and Karma
