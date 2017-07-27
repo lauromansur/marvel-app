@@ -3,29 +3,29 @@ module.exports = function (grunt) {
     /* Project configuration - http://gruntjs.com/configuring-tasks */
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        clean: ['dist/*'],
+        clean: ['docs/*'],
         copy: {
             dist: { files: [{expand: true, cwd: 'app/', src: [
                 './*.{html,ico}', 'img/**/*', 'css/**/*.css', 'js/**/*', '!js/**/*_test.js',
-                'bower_components/**/*.js', 'bower_components/**/*.css'], dest: 'dist/'}]
+                'bower_components/**/*.js', 'bower_components/**/*.css'], dest: 'docs/'}]
             }
         },
         sass: {
             dist: { files: [{ src: 'app/css/app.scss', dest: 'app/css/app.css' }] }
         },
         uglify: {
-            dist: { files: [{expand: true, cwd: 'dist/', src: ['js/**/*.js'], dest: 'dist/'}] }
+            dist: { files: [{expand: true, cwd: 'docs/', src: ['js/**/*.js'], dest: 'docs/'}] }
         },
         cssmin: {
-            dist: { files: [{expand: true, cwd: 'dist/', src: ['**/*.css'], dest: 'dist/'}] }
+            dist: { files: [{expand: true, cwd: 'docs/', src: ['**/*.css'], dest: 'docs/'}] }
         },
         htmlmin: {
             options: { caseSensitive: true, removeComments: true, collapseWhitespace: true },
-            dist: { files: [{expand: true, cwd: 'dist/', src: ['./*.html', 'js/**/*.html'], dest: 'dist/'}] }
+            dist: { files: [{expand: true, cwd: 'docs/', src: ['./*.html', 'js/**/*.html'], dest: 'docs/'}] }
         },
         cacheBust: {
             options: { baseDir: 'dist', assets: ['src/**', '!src/img/**'], deleteOriginals: true, length: 8 },
-            dist: { files: [{expand: true, cwd: 'dist/', src: ['**/*.{js,css,html}']}] }
+            dist: { files: [{expand: true, cwd: 'docs/', src: ['**/*.{js,css,html}']}] }
         },
         watch: {
             sass: { files: ['app/css/**/*.scss'], tasks: ['sass'], options: {spawn: false} }

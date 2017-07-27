@@ -1,0 +1,1 @@
+"use strict";angular.module("marvelApp").factory("Creators",["$resource","api",function(r,e){return r(e.path+"/creators?apikey="+e.key)}]);
