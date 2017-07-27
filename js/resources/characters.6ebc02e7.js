@@ -1,0 +1,1 @@
+"use strict";angular.module("marvelApp").factory("Characters",["$resource","api",function(r,a){return r(a.path+"/characters?apikey="+a.key)}]);

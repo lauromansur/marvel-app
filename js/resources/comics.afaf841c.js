@@ -1,0 +1,1 @@
+"use strict";angular.module("marvelApp").factory("Comics",["$resource","api",function(e,a){return e(a.path+"/comics?orderBy=onsaleDate&apikey="+a.key,{dateRange:"dateRange"})}]);

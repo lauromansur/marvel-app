@@ -1,0 +1,1 @@
+"use strict";angular.module("marvelApp").factory("Series",["$resource","api",function(e,r){return e(r.path+"/series?apikey="+r.key)}]);
