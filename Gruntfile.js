@@ -7,7 +7,7 @@ module.exports = function (grunt) {
         copy: {
             dist: { files: [{expand: true, cwd: 'app/', src: [
                 './*.{html,ico}', 'img/**/*', 'css/**/*.css', 'js/**/*', '!js/**/*_test.js',
-                'bower_components/**/*.js', 'bower_components/**/*.css'], dest: 'docs/'}]
+                'lib/**/*.js', 'lib/**/*.css'], dest: 'docs/'}]
             }
         },
         sass: {
@@ -24,7 +24,7 @@ module.exports = function (grunt) {
             dist: { files: [{expand: true, cwd: 'docs/', src: ['./*.html', 'js/**/*.html'], dest: 'docs/'}] }
         },
         cacheBust: {
-            options: { baseDir: 'dist', assets: ['src/**', '!src/img/**'], deleteOriginals: true, length: 8 },
+            options: { baseDir: 'docs', assets: ['js/**', '!js/img/**'], deleteOriginals: true, length: 8 },
             dist: { files: [{expand: true, cwd: 'docs/', src: ['**/*.{js,css,html}']}] }
         },
         watch: {
@@ -39,10 +39,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
-//    grunt.loadNpmTasks('grunt-cache-bust');
+    grunt.loadNpmTasks('grunt-cache-bust');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     /* Tasks */
     grunt.registerTask('default', ['clean', 'sass', 'copy', 'process']);
-    grunt.registerTask('process', ['uglify', 'cssmin', 'htmlmin'/*, 'cacheBust'*/]);
+    grunt.registerTask('process', ['uglify', 'cssmin', 'htmlmin', 'cacheBust']);
 };
