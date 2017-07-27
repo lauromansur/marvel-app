@@ -1,10 +1,10 @@
 # Project specific #
 ###################
 dist/*
-doc/*
+doc/private/*
 nbproject/*
 node_modules/*
-app/bower_components/*
+app/lib/*
 !.gitkeep
 .idea
 
