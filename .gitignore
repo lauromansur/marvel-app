@@ -5,6 +5,7 @@ doc/private/*
 nbproject/*
 node_modules/*
 app/lib/*
+gh-pages/*
 !.gitkeep
 .idea
 

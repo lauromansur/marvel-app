@@ -1,1 +1,0 @@
-"use strict";angular.module("marvelApp").factory("Events",["$resource","api",function(e,r){return e(r.path+"/events?apikey="+r.key)}]);

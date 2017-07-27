@@ -1,1 +1,0 @@
-"use strict";angular.module("marvelApp").factory("Stories",["$resource","api",function(e,r){return e(r.path+"/stories?apikey="+r.key)}]);

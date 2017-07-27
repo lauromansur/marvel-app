@@ -41,7 +41,7 @@
     "postupdate-deps": "bower update",
     "grunt": "grunt",
     "prestart": "npm install && grunt",
-    "start": "http-server -a localhost -p 8000 -c-1 ./docs -s -o",
+    "start": "http-server -a localhost -p 8000 -c-1 ./dist -s -o",
     "startdev": "http-server -a localhost -p 8000 -c-1 ./app -s -o",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
