@@ -1,0 +1,9 @@
+{
+    "exclude": [
+        "app/img",
+        "app/lib",
+        "doc",
+        "gh-pages",
+        "node_modules"
+    ]
+}

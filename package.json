@@ -42,6 +42,7 @@
     "grunt": "grunt",
     "prestart": "npm install && grunt",
     "start": "http-server -a localhost -p 8000 -c-1 ./dist -s -o",
+    "prestartdev": "npm install",
     "startdev": "http-server -a localhost -p 8000 -c-1 ./app -s -o",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
