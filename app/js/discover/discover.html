@@ -33,24 +33,20 @@
 </md-card>
 
 <!--Comics-->
-<md-content layout-xs="column" layout="row">
-    <div class="animated" ng-class="{'fadeInUp': ctrl.comics, 'fadeOutDown': !ctrl.comics}"
-        layout="row" layout-wrap flex layout-align="center top">
-        <md-card class="comic" ng-show="!!ctrl.comics" ng-repeat="comic in ctrl.comics.data.results">
-            <img ng-src="{{comic.bgImage}}" class="md-card-image" alt="{{comic.title}}">
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline" ng-bind="comic.title"></span>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-content>
-                <p><strong>On Sale Date: <span ng-bind="comic.onSaleDate"></span></strong></p>
-                <p ng-bind="comic.description"></p>
-            </md-card-content>
-        </md-card>
-        
-    </div>
-</md-content>
+<div class="animated" ng-class="{'fadeInUp': ctrl.comics, 'fadeOutDown': !ctrl.comics}" layout="row" layout-wrap flex layout-align="center top">
+    <md-card class="comic" ng-show="!!ctrl.comics" ng-repeat="comic in ctrl.comics.data.results">
+        <img ng-src="{{comic.bgImage}}" class="md-card-image" alt="{{comic.title}}">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline" ng-bind="comic.title"></span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <p><strong>On Sale Date: <span ng-bind="comic.onSaleDate"></span></strong></p>
+            <p ng-bind="comic.description"></p>
+        </md-card-content>
+    </md-card>
+</div>
     
 <!-- TODO: Implement Grid List
 <md-grid-list class="animated" ng-show="ctrl.comics"

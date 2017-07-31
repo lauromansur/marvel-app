@@ -8,6 +8,7 @@ app/lib/*
 gh-pages/*
 !.gitkeep
 .idea
+.vscode
 
 # Compiled source #
 ###################

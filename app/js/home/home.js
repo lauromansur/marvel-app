@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('marvelApp.homez', [])
+angular.module('marvelApp.home', [])
 
-.controller('HomeCtrl', [function() {
+.controller('HomeCtrl', ['$rootScope', function($rootScope) {
     var vm = this;
     
     vm.init = function(){
@@ -10,6 +10,8 @@ angular.module('marvelApp.homez', [])
     };
     
     vm.defaults = function(){
+        $rootScope.mainContentAlign = "center center";
+        
         vm.options = [
             {id: 1, title: 'Discover', state: 'discover'},
             {id: 1, title: 'Browse', state: 'browse', disabled: true},
