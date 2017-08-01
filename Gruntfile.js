@@ -24,8 +24,8 @@ module.exports = function (grunt) {
             dist: { files: [{expand: true, cwd: 'dist/', src: ['./*.html', 'js/**/*.html'], dest: 'dist/'}] }
         },
         cacheBust: {
-            options: { baseDir: 'dist', assets: ['js/**', '!js/img/**'], deleteOriginals: true, length: 8 },
-            dist: { files: [{expand: true, cwd: 'dist/', src: ['**/*.{js,css,html}']}] }
+            options: { baseDir: 'dist', assets: ['css/**', 'js/**'], deleteOriginals: true, length: 8 },
+            dist: { files: [{expand: true, cwd: 'dist/', src: ['index.html', 'js/main/config/*.js']}] }
         },
         watch: {
             sass: { files: ['app/css/**/*.scss'], tasks: ['sass'], options: {spawn: false} }
@@ -45,4 +45,5 @@ module.exports = function (grunt) {
     /* Tasks */
     grunt.registerTask('default', ['clean', 'sass', 'copy', 'process']);
     grunt.registerTask('process', ['uglify', 'cssmin', 'htmlmin', 'cacheBust']);
+    grunt.registerTask('test', ['clean', 'copy', 'cacheBust']);
 };
