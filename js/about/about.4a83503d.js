@@ -1,0 +1,1 @@
+"use strict";angular.module("marvelApp.about",[]).controller("AboutCtrl",["$rootScope",function(t){var n=this;n.init=function(){n.defaults()},n.defaults=function(){t.mainContentAlign="center center"},n.init()}]);

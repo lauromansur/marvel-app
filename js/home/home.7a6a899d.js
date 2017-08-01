@@ -1,0 +1,1 @@
+"use strict";angular.module("marvelApp.home",[]).controller("HomeCtrl",["$rootScope",function(t){var e=this;e.init=function(){e.defaults()},e.defaults=function(){t.mainContentAlign="center center",e.options=[{id:1,title:"Discover",state:"discover"},{id:1,title:"Browse",state:"browse",disabled:!0},{id:1,title:"About",state:"about"}]},e.init()}]);
