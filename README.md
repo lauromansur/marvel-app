@@ -23,5 +23,7 @@ Init
 npm start
 ```    
 
-## TODO ##
-- Check items under [Projects](https://github.com/lauromansur/marvel-app/projects/1) and [Issues](https://github.com/lauromansur/marvel-app/issues).
+## TODO and other guidelines ##
+- [Projects/marvel-app](https://github.com/lauromansur/marvel-app/projects/1) contains a roadmap to issues under three main categories: feature, bug, todo;
+- New issues can be created directly at [Issues](https://github.com/lauromansur/marvel-app/issues), or listed at [Projects/marvel-app](https://github.com/lauromansur/marvel-app/projects/1) to be converted to issues later.
+- Each issue should originate a new branch under master.
