@@ -663,11 +663,11 @@ md-content {
 md-input-container.md-input-normal md-icon {
   color: white !important; }
 
-md-input-container.md-input-normal label, md-input-container.md-input-normal label:after {
-  color: rgba(255, 255, 255, 0.5) !important; }
-
-md-input-container.md-input-normal .md-input {
+md-input-container.md-input-normal .md-input, md-input-container.md-input-normal md-select, md-input-container.md-input-normal md-select .md-select-value {
   border-color: rgba(255, 255, 255, 0.12) !important; }
+
+md-input-container.md-input-normal label, md-input-container.md-input-normal label:after, md-input-container.md-input-normal md-select-value span, md-input-container.md-input-normal md-select-value span:after {
+  color: rgba(255, 255, 255, 0.5) !important; }
 
 .bg-cover-marvel {
   background-attachment: fixed;

@@ -1,6 +1,5 @@
 <!--Form-->
-<md-card class="animated" ng-show="!ctrl.comics && !ctrl.comic"
-    ng-class="{'fadeInUp': !ctrl.comics, 'fadeOutUp': ctrl.comics}">
+<md-card ng-show="true">
     <md-card-actions layout="row" layout-align="start center">
         <md-button md-no-ink ui-sref="home">
             <md-icon ng-bind="'arrow_back'"></md-icon>&nbsp;Back
@@ -15,15 +14,25 @@
     <md-card-content class="text-center">
         <form name="frm" novalidate ng-submit="ctrl.submit()">
             <div flex layout="row" layout-align="center" class="mt-4">
-                <md-input-container md-no-float class="md-block" ng-class="{'md-input-normal': !frm.$submitted}">
+                 <md-input-container md-no-float class="md-block" ng-class="{'md-input-normal': !frm.$submitted}">
                     <label>Enter year of birth</label>
                     <md-icon ng-bind="'today'"></md-icon>
-                    <input name="birthYear" type="text" md-placeholder="yyyy" ng-model="ctrl.birthYear"
-                        ng-pattern="/^[1-9]{4}$/" maxlength="4" required ng-disabled="ctrl.flags.loading">
+                    <input name="birthYear" type="text" md-placeholder="yyyy" ng-model="ctrl.birthYear" ng-pattern="/^[1-9]{4}$/" maxlength="4"
+                        required ng-disabled="ctrl.flags.loading">
                     <div ng-messages="frm.birthYear.$error" role="alert" ng-show="frm.birthYear.$invalid && frm.$submitted">
                         <div ng-message="valid">Invalid date!</div>
                     </div>
-                </md-input-container>
+                </md-input-container> 
+                <!-- <md-input-container md-no-float class="md-block" ng-class="{'md-input-normal': !frm.$submitted}">
+                    <label>Year of birth</label>
+                    <md-icon ng-bind="'today'"></md-icon> 
+                    <md-select name="birthYear" ng-model="ctrl.birthYear" aria-label="Select year of birth" required ng-disabled="ctrl.flags.loading">
+                        <md-option ng-repeat="year in ctrl.years" ng-value="year" ng-bind="year"></md-option>
+                    </md-select>
+                    <div ng-messages="frm.birthYear.$error" role="alert" ng-show="frm.birthYear.$invalid && frm.$submitted">
+                        <div ng-message="valid">Invalid date!</div>
+                    </div>
+                </md-input-container> -->
             </div>
             <div flex layout="row" layout-align="center" class="md-margin">
                 <md-button type="submit" class="md-raised">Submit</md-button>
@@ -33,21 +42,27 @@
 </md-card>
 
 <!--Comics-->
-<div class="animated" ng-class="{'fadeInUp': ctrl.comics, 'fadeOutDown': !ctrl.comics}" layout="row" layout-wrap flex layout-align="center top">
-    <md-card class="comic" ng-show="!!ctrl.comics" ng-repeat="comic in ctrl.comics.data.results">
-        <img ng-src="{{comic.bgImage}}" class="md-card-image" alt="{{comic.title}}">
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline" ng-bind="comic.title"></span>
-            </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-            <p><strong>On Sale Date: <span ng-bind="comic.onSaleDate"></span></strong></p>
-            <p ng-bind="comic.description"></p>
-        </md-card-content>
-    </md-card>
+<div layout="row" layout-wrap flex layout-align="center top" ng-show="true">
+    <md-virtual-repeat-container md-top-index="ctrl.topIndex">
+        <div md-virtual-repeat="comic in ctrl.dynamicComics" md-on-demand class="repeated-item" flex>
+            <md-card class="comic">
+                <img ng-src="{{comic.bgImage}}" class="md-card-image" alt="{{comic.title}}">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline" ng-bind="comic.title"></span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p ng-bind="comic.description"></p>
+                </md-card-content>
+                <md-card-footer>
+                    <p><strong>On Sale Date: <span ng-bind="comic.onSaleDate"></span></strong></p>
+                </md-card-footer>
+            </md-card>
+        </div>
+    </md-virtual-repeat-container>
 </div>
-    
+
 <!-- TODO: Implement Grid List
 <md-grid-list class="animated" ng-show="ctrl.comics"
     md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
