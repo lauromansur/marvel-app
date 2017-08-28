@@ -19,7 +19,7 @@
                     <label>Enter year of birth</label>
                     <md-icon ng-bind="'today'"></md-icon>
                     <input name="birthYear" type="text" md-placeholder="yyyy" ng-model="ctrl.birthYear"
-                        ng-pattern="/^[1-9]{4}$/" maxlength="4" required ng-disabled="ctrl.flags.loading">
+                        ng-pattern="/^(19[0-9]\d|20[0-4]\d|2050)$/" maxlength="4" required ng-disabled="ctrl.flags.loading">
                     <div ng-messages="frm.birthYear.$error" role="alert" ng-show="frm.birthYear.$invalid && frm.$submitted">
                         <div ng-message="valid">Invalid date!</div>
                     </div>
@@ -33,19 +33,30 @@
 </md-card>
 
 <!--Comics-->
-<div class="animated" ng-class="{'fadeInUp': ctrl.comics, 'fadeOutDown': !ctrl.comics}" layout="row" layout-wrap flex layout-align="center top">
-    <md-card class="comic" ng-show="!!ctrl.comics" ng-repeat="comic in ctrl.comics.data.results">
-        <img ng-src="{{comic.bgImage}}" class="md-card-image" alt="{{comic.title}}">
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline" ng-bind="comic.title"></span>
-            </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-            <p><strong>On Sale Date: <span ng-bind="comic.onSaleDate"></span></strong></p>
-            <p ng-bind="comic.description"></p>
-        </md-card-content>
-    </md-card>
+<div class="animated" ng-show="!!ctrl.comics" ng-class="{'fadeInUp': ctrl.comics, 'fadeOutDown': !ctrl.comics}">
+    <!-- Back button -->
+    <md-button md-no-ink ng-click="ctrl.resetComics()">
+        <md-icon ng-bind="'arrow_back'"></md-icon>&nbsp;Back
+    </md-button>
+    <!-- Cards -->
+    <div layout="row" layout-wrap flex layout-align="center top">
+        <md-card class="comic" ng-repeat="comic in ctrl.comics.data.results">
+            <img ng-src="{{comic.bgImage}}" class="md-card-image" alt="{{comic.title}}">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-subhead">On Sale Date: <span ng-bind="comic.onSaleDate"></span></span>
+                    <span class="md-headline" ng-bind="comic.title"></span>
+                </md-card-title-text>
+            </md-card-title>
+            <!-- <md-card-content>
+                <p ng-bind="comic.description"></p>
+            </md-card-content> -->
+        </md-card>
+    </div>
+    <!-- Back button -->
+    <md-button md-no-ink ng-click="ctrl.resetComics()">
+        <md-icon ng-bind="'arrow_back'"></md-icon>&nbsp;Back
+    </md-button>
 </div>
     
 <!-- TODO: Implement Grid List
